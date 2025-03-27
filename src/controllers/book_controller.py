@@ -1,15 +1,3 @@
-# from fastapi import APIRouter, Depends, HTTPException
-# from sqlalchemy.orm import Session
-# from services.book_service import get_books
-# from config.database import get_db
-
-# router = APIRouter()
-
-# @router.get("/books")
-# def list_books(title: str = None, author: str = None, page: int = 1, limit: int = 10, db: Session = Depends(get_db)):
-#     return get_books(db, title, author, page, limit)
-
-
 from flask import request, jsonify
 from services.book_service import get_books, create_book
 from config.database import db

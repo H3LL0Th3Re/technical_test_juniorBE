@@ -1,31 +1,3 @@
-# from sqlalchemy.orm import Session
-# from models.book import Book
-# from fastapi import HTTPException
-# from sqlalchemy import or_
-
-# def get_books(db: Session, title: str = None, author: str = None, page: int = 1, limit: int = 10):
-#     query = db.query(Book)
-    
-#     # Apply filters if provided
-#     if title:
-#         query = query.filter(Book.title.ilike(f"%{title}%"))
-#     if author:
-#         query = query.filter(Book.author.ilike(f"%{author}%"))
-    
-#     total = query.count()
-#     books = query.offset((page - 1) * limit).limit(limit).all()
-
-#     return {
-#         "data": books,
-#         "pagination": {
-#             "total": total,
-#             "page": page,
-#             "limit": limit,
-#             "totalPages": (total + limit - 1) // limit
-#         }
-#     }
-
-
 from sqlalchemy.orm import Session
 from models.book import Book
 

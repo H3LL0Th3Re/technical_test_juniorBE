@@ -28,9 +28,9 @@ class member_controller:
         }), 201
     def get_member_borrowing_history(member_id):
         try:
-            status = request.args.get("status", None)  # Optional
-            page = int(request.args.get("page", 1))  # Default to 1
-            limit = int(request.args.get("limit", 10))  # Default to 10
+            status = request.args.get("status", None)  
+            page = int(request.args.get("page", 1)) 
+            limit = int(request.args.get("limit", 10)) 
 
             borrowings = fetch_member_borrowings(db.session, member_id, status, page, limit)
             return jsonify(borrowings), 200

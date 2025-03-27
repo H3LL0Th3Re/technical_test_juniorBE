@@ -1,16 +1,15 @@
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from config.database import db  # Ensure db is initialized here
+from config.database import db  
 import os
 from dotenv import load_dotenv
 load_dotenv()
-# print(os.getenv("DATABASE_URL"))
+
 def create_app():
     app = Flask(__name__)    
 
-    # Database configuration
-    # DATABASE_URL = os.getenv("DATABASE_URL")
+   
     database_url = os.getenv("DATABASE_URL")
     # database_url = f"postgresql://{user}:{password}@{hostname}:{port}/{db_name}" //if failed to get env
     
@@ -25,7 +24,6 @@ def create_app():
     from models.member import Member
     from models.borrowing import Borrowing
 
-    
     from routes.book_routes import book_bp
     from routes.member_routes import member_bp
     from routes.borrowing_routes import borrowing_bp

@@ -15,6 +15,6 @@ class Borrowing(db.Model):
     created_at = db.Column(db.TIMESTAMP, default=datetime.utcnow)
     updated_at = db.Column(db.TIMESTAMP, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    # Relationships
+    
     book = db.relationship("Book", backref="borrowings")
     member = db.relationship("Member", backref="borrowings")
